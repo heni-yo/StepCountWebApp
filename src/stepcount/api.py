@@ -337,7 +337,7 @@ def process_csv_data(
             if hasattr(model, attr_name):
                 value = getattr(model, attr_name)
                 if hasattr(value, 'total_seconds'):
-                    setattr(model, attr_name, float(value.total_seconds()))
+                    setattr(model, attr_name, float(value.total_seconds() ))
                 elif hasattr(value, 'dtype') and 'timedelta' in str(value.dtype):
                     setattr(model, attr_name, float(value))
                 else:
